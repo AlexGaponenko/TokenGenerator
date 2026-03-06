@@ -1,0 +1,15 @@
+
+# --- .NET / C# ---
+bin/
+obj/
+
+# Кэш сборок
+*.exe
+*.dll
+*.pdb
+*.cache
+*.log
+
+# Папка с публикацией
+publish/
+artifacts/

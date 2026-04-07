@@ -1,0 +1,21 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:vm="using:TokenGenerator.ViewModels"
+             x:Class="TokenGenerator.Views.SettingsView"
+             x:DataType="vm:SettingsViewModel">
+
+	<StackPanel Margin="10">
+		<TextBox Text="{Binding UserEmail}"
+                 Watermark="Email"
+                 Margin="0,0,0,10"/>
+
+		<CheckBox Content="Темная тема"
+                  IsChecked="{Binding IsDarkTheme}"
+                  Margin="0,0,0,10"/>
+
+		<Button Content="Сохранить"
+                Command="{Binding SaveCommand}"
+                HorizontalAlignment="Left"
+                Padding="20,5"/>
+	</StackPanel>
+</UserControl>

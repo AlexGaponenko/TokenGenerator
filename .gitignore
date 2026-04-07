@@ -2,6 +2,20 @@
 # --- .NET / C# ---
 bin/
 obj/
+.vs/
+
+# NuGet
+*.nupkg
+**/packages/*
+!**/packages/build/
+!**/packages/repositories.config
+
+# Пользовательские файлы (VS и MonoDevelop/Xamarin)
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+*.userprefs
 
 # Кэш сборок
 *.exe
@@ -10,6 +24,25 @@ obj/
 *.cache
 *.log
 
+
 # Папка с публикацией
 publish/
 artifacts/
+
+#Сборки 
+[Dd]ebug/
+[Dd]ebugPublic/
+[Rr]elease/
+[Rr]eleases/
+x64/
+x86/
+[Bb]in/
+[Oo]bj/
+build/
+bld/
+
+# Резервные копии и временные файлы
+*.tmp
+*.log
+*.vspscc
+*.vssscc

@@ -1,7 +1,7 @@
 <UserControl xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:vm="using:TokenGenerator.ViewModels"
-             x:Class="TokenGenerator.Views.SettingsView"
+             xmlns:vm="using:TokenGenerator.UI.ViewModels"
+             x:Class="TokenGenerator.UI.Views.SettingsView"
              x:DataType="vm:SettingsViewModel">
 
 	<StackPanel Margin="10">

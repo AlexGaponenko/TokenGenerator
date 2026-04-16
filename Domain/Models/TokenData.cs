@@ -8,8 +8,8 @@ namespace TokenGenerator.Domain.Models
 {
     public class TokenData
     {
-        public string Token { get; }
-        public DateTimeOffset ExpiresOn { get; }
+        public string Token { get; set; }
+        public DateTimeOffset ExpiresOn { get; set; }
 
         public TokenData(string token, DateTimeOffset expiresOn)
         {

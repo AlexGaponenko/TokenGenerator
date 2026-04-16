@@ -10,5 +10,7 @@ namespace TokenGenerator.Models
     {
         public string UserEmail { get; set; }
         public bool IsDarkTheme { get; set; }
+
+        public string TenantId { get; set; }
     }
 }

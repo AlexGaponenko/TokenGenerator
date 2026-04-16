@@ -11,24 +11,31 @@ namespace TokenGenerator.Services
 {
     public class AuthenticationService : IAuthenticationService
     {
-        public async Task<TokenData> AuthenticateInteractiveAsync(string loginHint = null, string tenantId = null)
+        private readonly IAuthSettingsProvider _settingsProvider;
+
+        public AuthenticationService(IAuthSettingsProvider settingsProvider)
         {
+            _settingsProvider = settingsProvider;
+        }
+
+        public async Task<TokenData> AuthenticateInteractiveAsync()
+        {
+            var settings = _settingsProvider.Get();
+
             var credential = new InteractiveBrowserCredential(
                 new InteractiveBrowserCredentialOptions
                 {
-                    TenantId = tenantId,
-                    LoginHint = loginHint,
+                    LoginHint = settings.UserEmail,
+                    TenantId = settings.TenantId,
                     TokenCachePersistenceOptions = new TokenCachePersistenceOptions()
-                }
-            );
-
-
-            var cts = new CancellationTokenSource(TimeSpan.FromSeconds(30));
+                });
 
             var token = await credential.GetTokenAsync(
-                new TokenRequestContext(new[] { "https://ossrdbms-aad.database.windows.net/.default" }),
-                cts.Token
-            );
+                new TokenRequestContext(new[]
+                {
+                "https://ossrdbms-aad.database.windows.net/.default"
+                }));
+
             return new TokenData(token.Token, token.ExpiresOn);
 
         }

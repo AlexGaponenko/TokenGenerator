@@ -1,7 +1,7 @@
 using Avalonia.Controls;
-using TokenGenerator.ViewModels;
+using TokenGenerator.UI.ViewModels;
 
-namespace TokenGenerator.Views
+namespace TokenGenerator.UI.Views
 {
     public partial class MainWindow : Window
     {

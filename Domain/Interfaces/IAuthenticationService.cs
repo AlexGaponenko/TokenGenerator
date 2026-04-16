@@ -6,9 +6,7 @@ namespace TokenGenerator.Domain.Interfaces
 
     public interface IAuthenticationService
     {
-        Task<TokenData> AuthenticateInteractiveAsync(
-            string loginHint = null,
-            string tenantId = null);
+        Task<TokenData> AuthenticateInteractiveAsync();
     }
 
 }

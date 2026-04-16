@@ -7,9 +7,11 @@ using Avalonia.Data.Core.Plugins;
 using Avalonia.Markup.Xaml;
 using Microsoft.Extensions.DependencyInjection;
 using TokenGenerator.Domain.Interfaces;
+using TokenGenerator.Domain.Models;
 using TokenGenerator.Services;
-using TokenGenerator.ViewModels;
-using TokenGenerator.Views;
+using TokenGenerator.UI.Services;
+using TokenGenerator.UI.ViewModels;
+using TokenGenerator.UI.Views;
 
 namespace TokenGenerator
 {
@@ -30,6 +32,9 @@ namespace TokenGenerator
 
             //Domain
             services.AddSingleton<IAuthenticationService, AuthenticationService>();
+            services.AddSingleton<IAuthSettingsProvider, AuthSettingsProvider>();
+            services.AddSingleton<IAuthenticationService, AuthenticationService>();
+
 
             //ViewModels
             services.AddTransient<MainWindowViewModel>();
@@ -41,9 +46,11 @@ namespace TokenGenerator
             services.AddTransient<SettingsWindow>();
             services.AddSingleton<SettingsViewModel>();
 
+            //UI
+            services.AddSingleton<IClipboardService, AvaloniaClipboardService>();
+
             Services = services.BuildServiceProvider();
 
-            //UI
             if (ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktop)
             {
                 desktop.MainWindow = Services.GetRequiredService<MainWindow>();

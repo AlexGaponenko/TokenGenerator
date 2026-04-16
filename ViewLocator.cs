@@ -1,7 +1,7 @@
 using System;
 using Avalonia.Controls;
 using Avalonia.Controls.Templates;
-using TokenGenerator.ViewModels;
+using TokenGenerator.UI.ViewModels;
 
 namespace TokenGenerator
 {

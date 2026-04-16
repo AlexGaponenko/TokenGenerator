@@ -4,7 +4,7 @@ using System.Runtime.CompilerServices;
 using System.Windows.Input;
 using TokenGenerator.Models;
 
-namespace TokenGenerator.ViewModels;
+namespace TokenGenerator.UI.ViewModels;
 
 public class SettingsViewModel : INotifyPropertyChanged
 {

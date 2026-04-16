@@ -1,8 +1,8 @@
 ﻿using Avalonia.Controls;
 using System;
-using TokenGenerator.ViewModels;
+using TokenGenerator.UI.ViewModels;
 
-namespace TokenGenerator.Views;
+namespace TokenGenerator.UI.Views;
 
 public partial class SettingsWindow : Window
 {

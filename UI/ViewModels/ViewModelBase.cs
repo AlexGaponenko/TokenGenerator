@@ -1,6 +1,6 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 
-namespace TokenGenerator.ViewModels
+namespace TokenGenerator.UI.ViewModels
 {
     public class ViewModelBase : ObservableObject
     {
